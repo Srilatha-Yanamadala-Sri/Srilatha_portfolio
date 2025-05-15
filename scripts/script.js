@@ -78,3 +78,21 @@ function initializeTypewriter() {
 
     typeWriter();
 }
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the current visitor count from localStorage
+    let visitorCount = localStorage.getItem('visitorCount');
+
+    if (!visitorCount) {
+        // If no count exists, initialize it to 1
+        visitorCount = 1;
+    } else {
+        // Increment the count
+        visitorCount = parseInt(visitorCount) + 1;
+    }
+
+    // Save the updated count back to localStorage
+    localStorage.setItem('visitorCount', visitorCount);
+
+    // Display the count in the HTML
+    document.getElementById('visitor-count').textContent = visitorCount;
+});
