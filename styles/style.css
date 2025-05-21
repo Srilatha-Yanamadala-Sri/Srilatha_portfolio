@@ -51,6 +51,44 @@ nav {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* optional for visual separation */
 }
 
+.hanging-name {
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.hanging-name::before,
+.hanging-name::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 40px;
+  background-color: #333;
+  top: -40px;
+}
+
+.hanging-name::before {
+  left: 20%;
+}
+
+.hanging-name::after {
+  right: 20%;
+}
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.hanging-name {
+  animation: swing 3s ease-in-out infinite;
+  transform-origin: top center;
+}
 
 
 
@@ -73,25 +111,6 @@ a:hover {
   text-decoration-color: rgb(181, 181, 181);
 }
 
-.logo {
-  font-size: 2.5rem;
-  color: rgb(13, 13, 14);
-   font-weight: bold;
-  font-family: 'Georgia', serif; /* You can choose another font if you want */
-  cursor: pointer;
-  
-}
-
-
-.logo:hover {
-  cursor: default;
-    text-decoration: underline;
-      text-underline-offset: 1rem;
-  color: grey;
-
-  text-decoration-color: rgb(130, 130, 130);
-
-}
 
 /* HAMBURGER MENU */
 
